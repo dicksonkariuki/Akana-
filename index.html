@@ -15,23 +15,31 @@
     <div class="container">
 
 
-        <div class="jumbotron">
-            <div class="card">
-                <div class="card-body">
-                    <form name="dates" onsubmit="return validateform()">
-                        <input type="text" id="day" name="DD" value=""><span class="label">Day</span><br><br>
-                        <input type="text" id="month" name="MN" value=""><span class="label">Month</span><br><br>
-                        <input type="text" id="year" name="YY" value=""><span class="label">Year</span><br><br>
-                        <p class="label">Please select your gender</p>
-                        <input type="radio" name="gender" value="male"><span class="label">Male</span><br><br>
-                        <input type="radio" name="gender" value="female"><span class="label">Female</span><br><br>
-                        <button class="btn btn-primary" type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
+
+
+        <div class="box">
+            <form class="dates" onsubmit="return validateform()">
+                <p><strong>Day</strong></p><br>
+                <input type="text" id="day" name="DD" value="">
+                <p><strong>Month</strong></p><br>
+                <input type="text" id="month" name="MN" value="">
+                <p><strong>Century</strong></p><br>
+                <input type="text" id="century" name="CC" value="">
+                <p><strong>Year</strong></p><br>
+                <input type="text" id="year" name="YY" value="">
+                <p class="label">Please select your gender</p>
+                <input type="radio" name="gender" value="male"><span class="label">Male</span><br><br>
+                <input type="radio" name="gender" value="female"><span class="label">Female</span><br><br>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
         </div>
+
+
     </div>
     <script src="script.js"></script>
 </body>
+<footer>
+
+</footer>
 
 </html>
