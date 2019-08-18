@@ -57,7 +57,7 @@
 
 ---
 
-You can contact the developer throught +254726045494.
+You can contact the developer through +254726045494.
 
 ---
 
