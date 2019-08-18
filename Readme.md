@@ -41,7 +41,7 @@
 
 ## | behaviour| input | Output |
 
-## | Page loads| User enters| An elert message with users Akan name|
+## | Page loads| data input| An elert message with users Akan name|
 
 ---
 
