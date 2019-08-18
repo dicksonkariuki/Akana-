@@ -28,7 +28,7 @@
 
 1. A user will see a form upon visiting the website.
 2. User inputs the day of birth, month, century, and year.
-3. Clicks the submit button .
+3. User Clicks the submit button .\
    4.Upon entry of correct values the application displays the day when the user was born and Akan name.
 
 ---
