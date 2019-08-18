@@ -1,0 +1,22 @@
+nav {
+  background: darkblue !important;
+  width: 100%;
+  height: 50px;
+}
+
+.card-header {
+  background-color: green;
+}
+nav ul li {
+  background-color: white !important;
+}
+.card {
+  background-image: url(media/bg.jpeg);
+}
+h1 {
+  color: white;
+  margin-left: 500px;
+}
+.label {
+  color: white;
+}
