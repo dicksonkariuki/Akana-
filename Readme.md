@@ -47,9 +47,9 @@
 
 ---
 
-*HTML to create the webpages.
-*CSS to style the webpages.
-\*Bootstrap.
+1.HTML to create the webpages.
+2.CSS to style the webpages.
+3.Bootstrap.
 
 ---
 
