@@ -43,10 +43,6 @@
 
 ---
 
-### Installing
-
----
-
 ### Technologies Used
 
 ---
