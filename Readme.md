@@ -37,9 +37,11 @@
 
 ---
 
-| behaviour| input | Output |
-| Page loads| User enters| An elert message with users Akan name|
-| | | |
+---
+
+## | behaviour| input | Output |
+
+## | Page loads| User enters| An elert message with users Akan name|
 
 ---
 
