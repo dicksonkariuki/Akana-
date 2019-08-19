@@ -44,3 +44,22 @@ footer {
   width: 200px;
   border-radius: 1px !important;
 }
+p {
+  color: black;
+  font-weight:bold;
+}
+.names{
+  color:white;
+  font-family:sans-serif;
+}
+.label{
+  color:black;
+  font-weight:bold;
+}
+.names{
+  box-sizing:border-box;
+  background-color:green;
+  width:auto;
+  border-radius:10px;
+  text-align:center;
+}
