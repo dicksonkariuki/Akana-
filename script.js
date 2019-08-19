@@ -1,18 +1,28 @@
-var male = {
-  Sunday: Kwasi,
-  Monday: Kwadwo,
-  Tuesday: Kwabena,
-  Wednesday: Kwaku,
-  Thursday: Yaw,
-  Friday: Kofi,
-  Saturday: Kwame
-};
 function validateform() {
-  var day = document.getElementById("day").value;
-  var month = document.getElementById("month").value;
-  var year = document.getElementById("year").value;
-  var century = document.getElementById("century").value;
+  var day = parseInt(document.getElementById("day").value);
+  var month = parseInt(document.getElementById("month").value);
+  var year = parseInt(document.getElementById("year").value);
+  var century = parseInt(document.getElementById("century").value);
   var gender = document.getElementsByName("gender");
+
+  var male = {
+    Sunday: "Kwasi",
+    Monday: "Kwadwo",
+    Tuesday: "Kwabena",
+    Wednesday: "Kwaku",
+    Thursday: "Yaw",
+    Friday: "Kofi",
+    Saturday: "Kwame"
+  };
+  var female = {
+    Sunday: "Akosua",
+    Monday: "Adwoa",
+    Tuesday: "Abenaa",
+    Wednesday: "Akua",
+    Thursday: "Yaa",
+    Friday: "Afua",
+    Saturday: "Ama"
+  };
 
   if (day == "" || day == null) {
     alert("Day is required");
@@ -20,9 +30,7 @@ function validateform() {
     if (!isNaN(day)) {
       if (day <= 0 || day > 31) {
         alert("day is invalid");
-      } else {
-        alert(day);
-      }
+      } 
     } else {
       alert("Number required");
     }
@@ -33,9 +41,7 @@ function validateform() {
     if (!isNaN(month)) {
       if (month <= 0 || month > 12) {
         alert("month is invalid");
-      } else {
-        alert(month);
-      }
+      } 
     } else {
       alert("Number required");
     }
@@ -46,72 +52,105 @@ function validateform() {
   } else {
     if (isNaN(century)) {
       alert("century is invalid");
-    } else {
-      alert(century);
-    }
+    } 
   }
   if (year == "" || year == null) {
     alert("year is required");
   } else {
     if (isNaN(year)) {
       alert("year is invalid");
-    } else {
-      alert(year);
+    } 
+  }
+
+  function getGender() {
+    for (var singleGender of gender) {
+      if (singleGender.checked) {
+        return singleGender.value;
+      }
     }
   }
 
-  if (gender[0].checked === false && gender[1].checked === false) {
-    alert("select gender");
-  } else {
-    for (i = 0; i < gender.length; i++) {
-      if (gender[i].checked) {
-        alert(gender[i].value);
-      }
+  var myGenderValue = getGender();
+
+
+  var d = Math.round(
+    (century / 4 -
+      2 * century -
+      1 +
+      (5 * year) / 4 +
+      (26 * (month + 1)) / 10 +
+      day) %
+      7
+  );
+  //alert(d);
+
+  var pickedDay;
+  if (myGenderValue == "male") {
+    switch (d) {
+      case 0:
+        pickedDay = male.Sunday;
+        alert(" Your name is Kwasi and you were born on sunday");
+        break;
+      case 1:
+        pickedDay = male.Monday;
+        alert(" Your name is Kwadwo and you were born on monday");
+        break;
+      case 2:
+        pickedDay = male.Tuesday;
+        alert(" Your name is Kwabena and you were born on tuesday");
+        break;
+      case 3:
+        pickedDay = male.Wednesday;
+        alert("Your name is Kwaku and you were born on Wednesday");
+        break;
+      case 4:
+        pickedDay = male.Thurday;
+        alert(" Your name is Yaw and you were born on thursday");
+        break;
+      case 5:
+        pickedDay = male.Friday;
+        alert("Your name is Kofi and you were born on friday");
+        break;
+      case 6:
+        pickedDay = male.Saturday;
+        alert("Your name is Kwame and you were born on saturday");
+        break;
+      default:
+        pickedDay = "You are lost!";
+    }
+  } else if (myGenderValue == "female") {
+    switch (d) {
+      case 0:
+        pickedDay = female.Sunday;
+        alert(" Your name is Akosua and you were born on sunday");
+        break;
+      case 1:
+        pickedDay = female.Monday;
+        alert(" Your name is Adwoa and you were born on monday");
+        break;
+      case 2:
+        pickedDay = female.Tuesday;
+        alert(" Your name is Abena and you were born on tuesday");
+        break;
+      case 3:
+        pickedDay = female.Wednesday;
+        alert("Your name is Akua and you were born on Wednesday");
+        break;
+      case 4:
+        pickedDay = female.Thurday;
+        alert(" Your name is Yaa and you were born on thursday");
+        break;
+      case 5:
+        pickedDay = female.Friday;
+        alert("Your name is Afua and you were born on friday");
+        break;
+      case 6:
+        pickedDay = female.Saturday;
+        alert("Your name is Ama and you were born on saturday");
+        break;
+      default:
+        pickedDay = "You picked a wrong day!";
     }
   }
-  if (gender === male) {
-    var dD = Number(prompt("Enter date:"));
-    var mM = Number(prompt("Enter month:"));
-    var cC = Number(prompt("Enter century:"));
-    var yY = Number(prompt("Enter year:"));
-    function dayOfTheWeek() {
-      var d = Math.round(
-        (cC / 4 - 2 * cC - 1 + (5 * yY) / 4 + (26 * (mM + 1)) / 10 + dD) % 7
-      );
-      var pickedDay;
-      switch (d) {
-        case 0:
-          pickedDay = "Sunday";
-          alert(" Your name is Kwasi and you were born on sunday");
-          break;
-        case 1:
-          pickedDay = "Monday";
-          alert(" Your name is Kwadwo and you were born on monday");
-          break;
-        case 2:
-          pickedDay = "Tuesday";
-          alert(" Your name is Kwabena and you were born on tuesday");
-          break;
-        case 3:
-          pickedDay = "Wednesday";
-          alert("Your name is Kwaku and you were born on Wednesday");
-          break;
-        case 4:
-          pickedDay = "Thurday";
-          alert(" Your name is Yaw and you were born on thursday");
-          break;
-        case 5:
-          pickedDay = "Friday";
-          alert("Your name is Kofi and you were born on friday");
-          break;
-        case 6:
-          pickedDay = "Saturday";
-          alert("Your name is Kwame and you were born on saturday");
-          break;
-        default:
-          pickedDay = "You are lost!";
-      }
-    }
-    alert(dayOfTheWeek());
-  }
+  //alert(dayOfTheWeek());
 }
